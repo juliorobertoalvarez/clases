@@ -1,0 +1,25 @@
+{% extends 'albums/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+<h1>Vista Albums </h1>
+
+<div class="card border-primary mb-3" style="max-width: 100%;">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h4 class="card-title">{{ album.nombre }}</h4>
+    <p class="card-text">
+    <p>{{ album.fecha_salida}}</p>
+    <p>{{ album.descripcion }}</p>
+    <p>{{ album.cantidad_canciones}}</p>
+    <p>{{ album.nombre_integrantes }}</p>
+    <a class="btn btn-default" href="{% url 'album_edit' pk=album.pk %}"><span class="glyphicon glyphicon-pencil">Editar</span></a>
+      <a class="btn btn-default" href="{% url 'album_remove' pk=album.pk %}"><span class="glyphicon glyphicon-remove">Borrar</span></a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

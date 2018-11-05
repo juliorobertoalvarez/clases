@@ -1,0 +1,25 @@
+{% extends 'albums/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+<h1>Vista Artista </h1>
+
+<div class="card border-primary mb-3" style="max-width: 100%;">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h4 class="card-title">{{ artista.nombre }}</h4>
+    <p class="card-text">
+    <p>{{ artista.apodo}}</p>
+    <p>{{ artista.anios }}</p>
+    <p>{{ artista.profesion}}</p>
+    <p>{{ artista.albums }}</p>
+    <a class="btn btn-default" href="{% url 'artista_edit' pk=artista.pk %}"><span class="glyphicon glyphicon-pencil">Editar</span></a>
+      <a class="btn btn-default" href="{% url 'artista_remove' pk=artista.pk %}"><span class="glyphicon glyphicon-remove">Borrar</span></a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

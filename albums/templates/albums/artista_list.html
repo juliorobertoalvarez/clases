@@ -1,0 +1,29 @@
+{% extends 'albums/base.html' %}
+{% block content %}
+<br>
+<br>
+<h1>Artista</h1>
+<a  class="btn btn-outline-primary" href="{% url 'artista_new' %}"> Nuevo </a>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apodo</th>
+        <th scope="col">Años</th>
+        <th scope="col"> Profesion</th>
+        <th scope="col"> Albums</th>
+      </tr>
+    </thead>
+        {% for artista in artistas %}
+        <tr class="table-active">
+            
+            <td>{{ artista.nombre }} </td>
+            <td>{{ artista.apodo }}</td>
+            <td>{{ artista.anios }}</td>
+            <td>{{ artista.profesion }}</td>
+            <td>{{ artista.albums }}</td>
+            <td><a class="badge badge-success" href="{% url 'artista_detail' pk=artista.pk %}"> Ver </a> </td>
+          </tr>
+        {% endfor %}
+</table> 
+{% endblock %}

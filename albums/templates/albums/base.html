@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+    <head>
+        <title>Musica</title>
+        
+        <a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page"></a>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="{% static 'css/albums.css' %}">
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <a class="navbar-brand" href="{% url 'album_list' %}"> Biblioteca de Musica </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                      <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{% url 'album_list' %}" class="top-menu"><span class="glyphicon glyphicon-list">  Album </span></a>
+                        </li>
+
+                        
+                      </ul>
+                    </div>
+                  </nav>        
+
+                <br>
+                <br>
+                <div class="content container">
+                  
+                        {% block content %}
+                        {% endblock %}
+                      
+                </div>     
+    </body>
+</html>
