@@ -22,8 +22,10 @@ class Artista(models.Model):
         return self.nombre
 
 class Cancion(models.Model):
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
+    nombre                  = models.CharField(max_length=60)
+    descripcion             = models.CharField(max_length=60)
+    album                   = models.ForeignKey(Album, on_delete=models.CASCADE)
+    artista                 = models.ForeignKey(Artista, on_delete=models.CASCADE)
 
 class CacionInLine(admin.TabularInline):
     model = Cancion

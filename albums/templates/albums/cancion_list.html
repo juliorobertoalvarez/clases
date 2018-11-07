@@ -1,0 +1,28 @@
+{% extends 'albums/base.html' %}
+{% block content %}
+<br>
+<br>
+<h1>Cancion</h1>
+<a  class="btn btn-outline-primary" href="{% url 'cancion_new' %}"> Nuevo </a>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Album</th>
+        <th scope="col">Artista</th>
+
+      </tr>
+    </thead>
+        {% for canciones in cancion %}
+        <tr class="table-active">
+            
+            <td>{{ canciones.nombre }} </td>
+            <td>{{ canciones.descripcion }}</td>
+            <td>{{ canciones.album.nombre }}</td>
+            <td>{{ canciones.artista.nombre }}</td>
+            <td><a class="badge badge-success" href="{% url 'cancion_detail' pk=cancion.pk %}"> Ver </a> </td>
+          </tr>
+        {% endfor %}
+</table> 
+{% endblock %}

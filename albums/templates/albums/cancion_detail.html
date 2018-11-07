@@ -1,0 +1,24 @@
+{% extends 'albums/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+<h1>Vista Cancion </h1>
+
+<div class="card border-primary mb-3" style="max-width: 100%;">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h4 class="card-title">{{ cancion.nombre }}</h4>
+    <p class="card-text">
+    <p>{{ cancion.descripcion}}</p>
+    <p>{{ cancion.album.nombre }}</p>
+    <p>{{ cancion.artista.nombre}}</p>
+    <a class="btn btn-default" href="{% url 'cancion_edit' pk=cancion.pk %}"><span class="glyphicon glyphicon-pencil">Editar</span></a>
+      <a class="btn btn-default" href="{% url 'cancion_remove' pk=cancion.pk %}"><span class="glyphicon glyphicon-remove">Borrar</span></a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

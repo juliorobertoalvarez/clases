@@ -21,8 +21,29 @@
                         <li class="nav-item active">
                           <a class="nav-link" href="{% url 'album_list' %}" class="top-menu"><span class="glyphicon glyphicon-list">  Album </span></a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'artista_list' %}" class="top-menu"><span class="glyphicon glyphicon-list">  Artista </span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'cancion_list' %}" class="top-menu"><span class="glyphicon glyphicon-list">  Cancion </span></a>
+                        </li>
 
-                        
+                        {% if user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'album_new' %}" ><span class="glyphicon glyphicon-list">Nuevo Album</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'artista_new' %}" ><span class="glyphicon glyphicon-list">Nuevo Artista</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'cancion_new' %}" ><span class="glyphicon glyphicon-list">Nueva Cancion</span></a>
+                        </li>
+                        <a class="nav-link"> Bienvenido {{ user.username }} <a nav-link href="{% url 'logout' %}">Log out</a></a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock">Login</span></a>
+                        {% endif %}
+
                       </ul>
                     </div>
                   </nav>        
